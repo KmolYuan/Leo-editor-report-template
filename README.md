@@ -31,7 +31,7 @@ Copy `example` node to `project1`.
 
 * Edit Markdown files by Leo editor.
 * Use `@button pdf` node to convert pdf by pandoc.
-* Use `@button reveal.js` node to convert html by python script in Leo editor.(Remember to save leo file)
+* Use `@button reveal.js` node to convert html by python script in Leo editor. (Remember to save leo file)
 
 [Leo editor]: https://github.com/leo-editor/leo-editor
 [Pandoc]: https://github.com/jgm/pandoc/releases/

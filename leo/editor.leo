@@ -29,8 +29,8 @@
 <v t="40323230.20170305203454.1" a="E"><vh>@button example reveal.js</vh>
 <v t="40323230.20170305201307.6"></v>
 </v>
-<v t="40323230.20170305201723.1"><vh>@clean example.md</vh>
-<v t="40323230.20170305201959.1"><vh>Cover</vh></v>
+<v t="40323230.20170305201723.1" a="E"><vh>@clean example.md</vh>
+<v t="40323230.20170305201307.9"></v>
 <v t="40323230.20170305202239.1"><vh>First Chapter</vh>
 <v t="40323230.20170305201307.10"></v>
 <v t="40323230.20170305202345.1"><vh>First section</vh></v>
@@ -210,12 +210,11 @@ g.es("{} HTML briefing conversion is complete.".format(filename))</t>
 \newpage
 </t>
 <t tx="40323230.20170305201626.1">This is a markdown file example.</t>
-<t tx="40323230.20170305201723.1">@others
-</t>
-<t tx="40323230.20170305201959.1">% Example software | Version 0.4
+<t tx="40323230.20170305201723.1">% Example software | Version 0.4
 % Anonymous
 % January, 2017
 
+@others
 </t>
 <t tx="40323230.20170305202239.1">First Chapter
 ===
@@ -283,11 +282,16 @@ filename = "example"
 <t tx="40323230.20170305203813.1">@language html
 &lt;section&gt;
 &lt;section data-markdown data-separator="^\n&lt;!--===--&gt;\n"&gt;
-&lt;script type="text/template"&gt;@others
-% Example software | Version 0.4
-% Anonymous
-% January, 2017
+&lt;script type="text/template"&gt;## Example software | Version 0.4
+## Anonymous
+## January, 2017
+&lt;/script&gt;
+&lt;/section&gt;
+&lt;/section&gt;
 
+&lt;section&gt;
+&lt;section data-markdown data-separator="^\n&lt;!--===--&gt;\n"&gt;
+&lt;script type="text/template"&gt;
 First Chapter
 ===
 
