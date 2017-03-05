@@ -1,0 +1,106 @@
+<!--
+這個檔案展示了 reveal.js 投影片資料的基本架構
+其中使用 "reveal" class 與 "slides" class 來界定投影片的資料範圍
+而各投影片則以 <section></section> 標示
+且支援平行與垂直的投影片配置方法
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="kmol.png">
+<title>Example</title>
+<link rel="stylesheet" href="css/reveal.min.css">
+<link rel="stylesheet" href="css/theme/default.css" id="theme">
+<!--增加對於 IE 早期版本的支援 -->
+<!--[if lt IE 9]>
+<script src="lib/js/html5shiv.js"></script>
+<![endif]-->
+</head>
+<body>
+<style>
+.reveal h1 {
+  font-size : 50px;
+}
+
+.reveal h2 {
+  font-size : 45px;
+}
+
+.reveal p {
+  font-size : 25px;
+}
+
+.reveal li {
+  font-size : 25px;
+}
+</style>
+<div class="reveal">
+<div class="slides">
+<section>
+<section data-markdown data-separator="^\n<!--===-->\n">
+<script type="text/template">@others
+% Example software | Version 0.4
+% Anonymous
+% January, 2017
+
+First Chapter
+===
+
+<!--===-->
+
+First section
+---
+
+This is the first section.
+
+<!--===-->
+
+Second section
+---
+
+This is the second section.
+</script>
+</section>
+</section>
+
+<section>
+<section data-markdown data-separator="^\n<!--===-->\n">
+<script type="text/template">
+Second Chapter
+===
+
+<!--===-->
+
+First section
+---
+
+This is the first section.
+
+<!--===-->
+
+Second section
+---
+
+This is the second section.
+
+
+</script>
+</section>
+</section>
+</div>
+</div>
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.min.js"></script>
+<script>
+Reveal.initialize({
+    dependencies: [
+        { src: 'plugin/markdown/marked.js' },
+        { src: 'plugin/markdown/markdown.js' },
+        { src: 'plugin/notes/notes.js', async: true },
+        { src: 'plugin/highlight/highlight.js', async: true, callback: function() {hljs.initHighlightingOnLoad();}}
+    ]
+});
+</script>
+</body>
+</html>
