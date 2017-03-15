@@ -33,22 +33,21 @@ $endfor$
 $if(euro)$
   \newcommand{\euro}{€}
 $endif$
-$if(mainfont)$
-    \setmainfont[$for(mainfontoptions)$$mainfontoptions$$sep$,$endfor$]{$mainfont$}
-$endif$
-$if(sansfont)$
-    \setsansfont[$for(sansfontoptions)$$sansfontoptions$$sep$,$endfor$]{$sansfont$}
-$endif$
-$if(monofont)$
-    \setmonofont[Mapping=tex-ansi$if(monofontoptions)$,$for(monofontoptions)$$monofontoptions$$sep$,$endfor$$endif$]{$monofont$}
-$endif$
-$if(mathfont)$
-    \setmathfont(Digits,Latin,Greek)[$for(mathfontoptions)$$mathfontoptions$$sep$,$endfor$]{$mathfont$}
-$endif$
 \XeTeXlinebreaklocale "zh"
+\renewcommand{\chaptername}{章節}
+\renewcommand{\figurename}{圖}
+\renewcommand{\tablename}{表}
+\newcommand{\loflabel}{圖}
+\newcommand{\lotlabel}{表}
+\renewcommand{\bibname}{參考書目}
+\renewcommand{\abstractname}{附錄}
+\linespread{1}\selectfont
 $if(CJKmainfont)$
     \usepackage{xeCJK}
-    \setCJKmainfont[$for(CJKoptions)$$CJKoptions$$sep$,$endfor$]{$CJKmainfont$}
+    \setCJKmainfont{$CJKmainfont$}
+    \setmainfont{Times New Roman}
+    \setromanfont{Times New Roman}
+    \setmonofont{Times New Roman}
 $endif$
 \fi
 % use upquote if available, for straight quotes in verbatim environments
@@ -204,7 +203,7 @@ $header-includes$
 $endfor$
 
 $if(title)$
-\title{$title$$if(thanks)$\thanks{$thanks$}$endif$}
+\title{\huge $title$$if(thanks)$\thanks{$thanks$}$endif$}
 $endif$
 $if(subtitle)$
 \providecommand{\subtitle}[1]{}
@@ -235,6 +234,7 @@ $include-before$
 $endfor$
 $if(toc)$
 {
+\renewcommand{\contentsname}{目錄}
 $if(colorlinks)$
 \hypersetup{linkcolor=$if(toccolor)$$toccolor$$else$black$endif$}
 $endif$
@@ -243,9 +243,11 @@ $endif$
 }
 $endif$
 $if(lot)$
+\renewcommand{\listtablename}{表目錄}
 \listoftables
 $endif$
 $if(lof)$
+\renewcommand{\listfigurename}{圖目錄}
 \listoffigures
 $endif$
 $body$
