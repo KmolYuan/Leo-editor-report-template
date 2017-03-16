@@ -231,12 +231,13 @@ Reveal.initialize({
 <t tx="ahshoe.20161120122151.1">% 國立虎尾科技大學 \
     機械設計系 \
     專題研究紀錄 \
+    \
     專題研究題目 \
     Test English Title
-% 設計三甲 XXX 同學;
-    設計三甲 XXX 同學;
-    設計三甲 XXX 同學;
-    設計三甲 XXX 同學
+% 設計三乙 XXX 同學;
+    設計三乙 XXX 同學;
+    設計三乙 XXX 同學;
+    設計三乙 XXX 同學
 % 中華民國 106 年 6 月
 
 @others
@@ -265,8 +266,15 @@ g.es("{} PDF 轉換完畢".format(filename))</t>
 @others</t>
 <t tx="ahshoe.20170202131457.1">前言內容。
 
-與更詳細的概要 ...
+\ 
 
+一個範例數學式：$$\beta=\cos^{-1}{\frac{L0^{2}+d_{AB}^{2}-R0^{2}}{2\times{L0\times{d_{AB}}}}}$$
+
+\ 
+
+關於數學式可以參考這裡：[http://www.hostmath.com/][]
+
+[http://www.hostmath.com/]: http://www.hostmath.com/
 </t>
 <t tx="ahshoe.20170315212615.1">QTreeWidget {
     /* These apply to the selected item, but not to editing items.*/

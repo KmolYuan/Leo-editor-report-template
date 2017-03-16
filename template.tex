@@ -37,8 +37,6 @@ $endif$
 \renewcommand{\chaptername}{章節}
 \renewcommand{\figurename}{圖}
 \renewcommand{\tablename}{表}
-\newcommand{\loflabel}{圖}
-\newcommand{\lotlabel}{表}
 \renewcommand{\bibname}{參考書目}
 \renewcommand{\abstractname}{附錄}
 \linespread{1}\selectfont
@@ -48,6 +46,12 @@ $if(CJKmainfont)$
     \setmainfont{Times New Roman}
     \setromanfont{Times New Roman}
     \setmonofont{Times New Roman}
+    % 章次20級，節次16級，小節次以下14級，本文12級字
+    \def\LARGE{\fontsize{20}{30}\selectfont}%章次
+    \def\Large{\fontsize{16}{24}\selectfont}%節次
+    \def\large{\fontsize{14}{21}\selectfont}%小節次
+    % reset the chapter format
+    %\usepackage{CJKnumb}
 $endif$
 \fi
 % use upquote if available, for straight quotes in verbatim environments
@@ -243,11 +247,15 @@ $endif$
 }
 $endif$
 $if(lot)$
+\newcommand{\lotlabel}{表}
 \renewcommand{\listtablename}{表目錄}
+\renewcommand{\numberline}[1]{\loflabel~#1\hspace*{1em}}
 \listoftables
 $endif$
 $if(lof)$
+\newcommand{\loflabel}{圖}
 \renewcommand{\listfigurename}{圖目錄}
+\renewcommand{\numberline}[1]{\lotlabel~#1\hspace*{1em}}
 \listoffigures
 $endif$
 $body$
