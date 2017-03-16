@@ -33,25 +33,34 @@ $endfor$
 $if(euro)$
   \newcommand{\euro}{€}
 $endif$
-\XeTeXlinebreaklocale "zh"
-\renewcommand{\chaptername}{章節}
-\renewcommand{\figurename}{圖}
-\renewcommand{\tablename}{表}
-\renewcommand{\bibname}{參考書目}
-\renewcommand{\abstractname}{附錄}
-\linespread{1}\selectfont
+
 $if(CJKmainfont)$
     \usepackage{xeCJK}
-    \setCJKmainfont{$CJKmainfont$}
-    \setmainfont{Times New Roman}
-    \setromanfont{Times New Roman}
-    \setmonofont{Times New Roman}
+    \XeTeXlinebreaklocale "zh"
     % 章次20級，節次16級，小節次以下14級，本文12級字
     \def\LARGE{\fontsize{20}{30}\selectfont}%章次
     \def\Large{\fontsize{16}{24}\selectfont}%節次
     \def\large{\fontsize{14}{21}\selectfont}%小節次
-    % reset the chapter format
-    %\usepackage{CJKnumb}
+    \usepackage{indentfirst}
+    \usepackage{CJKnumb}
+    %\usepackage{tocloft}
+    \renewcommand{\figurename}{圖}
+    \renewcommand{\tablename}{表}
+    \renewcommand{\bibname}{\center 參考書目}
+    \renewcommand{\abstractname}{\center 附錄}
+    \renewcommand{\chaptername}{}
+    %\renewcommand{\cftchaptername}{第~1章}
+    %\renewcommand{\cftchappresnum}{第\CJKnumber{\arabic{chapter}}章}
+    \renewcommand{\thechapter}{\LARGE 第\CJKnumber{\arabic{chapter}}章}
+    \renewcommand{\thesection}{\Large {\arabic{chapter}}.\arabic{section}}
+    \renewcommand{\thesubsection}{\large {\arabic{chapter}}.{\arabic{section}}.\arabic{subsection}}
+    \linespread{1}\selectfont
+    \setCJKmainfont{$CJKmainfont$}
+    \setmainfont{Times New Roman}
+    \setromanfont{Times New Roman}
+    \setmonofont{Times New Roman}
+    %\titleformat{\chapter}[hang]{\bfseries\LARGE\centering}{第\CJKnumber{\arabic{chapter}}章}{0.5em}{}
+    %\titlecontents{chapter}[0em] {}{\normalfont\normalsize\bfseries\makebox[4.1em][l] {第\CJKnumber{\thecontentslabel}章}}{} {\titlerule*[0.7pc]{.}\contentspage}
 $endif$
 \fi
 % use upquote if available, for straight quotes in verbatim environments
@@ -238,7 +247,8 @@ $include-before$
 $endfor$
 $if(toc)$
 {
-\renewcommand{\contentsname}{目錄}
+\renewcommand{\contentsname}{\center 目錄}
+\renewcommand{\numberline}[1]{~#1\hspace*{1em}}
 $if(colorlinks)$
 \hypersetup{linkcolor=$if(toccolor)$$toccolor$$else$black$endif$}
 $endif$
@@ -248,13 +258,13 @@ $endif$
 $endif$
 $if(lot)$
 \newcommand{\lotlabel}{表}
-\renewcommand{\listtablename}{表目錄}
+\renewcommand{\listtablename}{\center 表目錄}
 \renewcommand{\numberline}[1]{\loflabel~#1\hspace*{1em}}
 \listoftables
 $endif$
 $if(lof)$
 \newcommand{\loflabel}{圖}
-\renewcommand{\listfigurename}{圖目錄}
+\renewcommand{\listfigurename}{\center 圖目錄}
 \renewcommand{\numberline}[1]{\lotlabel~#1\hspace*{1em}}
 \listoffigures
 $endif$
