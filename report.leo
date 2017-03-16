@@ -75,9 +75,17 @@ filename = "report"
 
 小標題2.1 的內容
 
+有一張圖片：
+
+![Kmol][]
+
+稱為圖 @fig:駱駝 。
+
+[Kmol]: ./kmol.png {#fig:駱駝}
+
 </t>
 <t tx="40323230.20170203112432.1">@language md
-\newpage
+&lt;!--===--&gt;
 </t>
 <t tx="40323230.20170203120011.1">@language md
 &lt;!--===--&gt;

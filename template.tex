@@ -43,24 +43,21 @@ $if(CJKmainfont)$
     \def\large{\fontsize{14}{21}\selectfont}%小節次
     \usepackage{indentfirst}
     \usepackage{CJKnumb}
-    %\usepackage{tocloft}
     \renewcommand{\figurename}{圖}
+    \renewcommand{\thefigure}{{\arabic{chapter}}.\arabic{section}}
     \renewcommand{\tablename}{表}
+    \renewcommand{\thetable}{{\arabic{chapter}}.\arabic{section}}
     \renewcommand{\bibname}{\center 參考書目}
     \renewcommand{\abstractname}{\center 附錄}
     \renewcommand{\chaptername}{}
-    %\renewcommand{\cftchaptername}{第~1章}
-    %\renewcommand{\cftchappresnum}{第\CJKnumber{\arabic{chapter}}章}
-    \renewcommand{\thechapter}{\LARGE 第\CJKnumber{\arabic{chapter}}章}
-    \renewcommand{\thesection}{\Large {\arabic{chapter}}.\arabic{section}}
-    \renewcommand{\thesubsection}{\large {\arabic{chapter}}.{\arabic{section}}.\arabic{subsection}}
+    \renewcommand{\thechapter}{第\CJKnumber{\arabic{chapter}}章}
+    \renewcommand{\thesection}{{\arabic{chapter}}.\arabic{section}}
+    \renewcommand{\thesubsection}{{\arabic{chapter}}.{\arabic{section}}.\arabic{subsection}}
     \linespread{1}\selectfont
     \setCJKmainfont{$CJKmainfont$}
     \setmainfont{Times New Roman}
     \setromanfont{Times New Roman}
     \setmonofont{Times New Roman}
-    %\titleformat{\chapter}[hang]{\bfseries\LARGE\centering}{第\CJKnumber{\arabic{chapter}}章}{0.5em}{}
-    %\titlecontents{chapter}[0em] {}{\normalfont\normalsize\bfseries\makebox[4.1em][l] {第\CJKnumber{\thecontentslabel}章}}{} {\titlerule*[0.7pc]{.}\contentspage}
 $endif$
 \fi
 % use upquote if available, for straight quotes in verbatim environments
@@ -215,6 +212,7 @@ $for(header-includes)$
 $header-includes$
 $endfor$
 
+%Cover Start
 $if(title)$
 \title{\huge $title$$if(thanks)$\thanks{$thanks$}$endif$}
 $endif$
@@ -231,6 +229,7 @@ $if(institute)$
 $endif$
 \date{$date$}
 
+%Document start
 \begin{document}
 $if(title)$
 \maketitle
@@ -265,7 +264,7 @@ $endif$
 $if(lof)$
 \newcommand{\loflabel}{圖}
 \renewcommand{\listfigurename}{\center 圖目錄}
-\renewcommand{\numberline}[1]{\lotlabel~#1\hspace*{1em}}
+\renewcommand{\numberline}[1]{\loflabel~#1\hspace*{1em}}
 \listoffigures
 $endif$
 $body$

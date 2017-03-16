@@ -10,7 +10,7 @@
     設計三乙 XXX 同學
 % 中華民國 106 年 6 月
 
-\newpage
+<!--===-->
 大標題一
 ===
 
@@ -29,7 +29,7 @@
 關於數學式可以參考這裡：[http://www.hostmath.com/][]
 
 [http://www.hostmath.com/]: http://www.hostmath.com/
-\newpage
+<!--===-->
 大標題二
 ===
 
@@ -41,6 +41,14 @@
 ---
 
 小標題2.1 的內容
+
+有一張圖片：
+
+![Kmol][]
+
+稱為圖 @fig:駱駝 。
+
+[Kmol]: ./kmol.png {#fig:駱駝}
 
 <!--===-->
 
