@@ -19,7 +19,7 @@
 </v>
 <v t="ahshoe.20161120122151.1" a="E"><vh>@clean master.md</vh>
 <v t="ahshoe.20170317115820.1"><vh>摘要</vh></v>
-<v t="ahshoe.20170129171825.1"><vh>大標題一</vh>
+<v t="ahshoe.20170129171825.1" a="E"><vh>大標題一</vh>
 <v t="ahshoe.20170202131457.1"><vh>前言內容</vh></v>
 </v>
 <v t="40323230.20170130111322.1" a="E"><vh>大標題二</vh>
@@ -47,6 +47,32 @@ filename = "report"
 
 小標題2.2 的內容
 
+其中包含一個表格：
+
+Table: Python 網際框架比較 {#tbl:網際框架}
+
+| Framework | Started | Py2 | Py3 | ORM | Template Engine | Auth Moudule | Database Admin | Project Scale |
+|:---------:|:-------:|:---:|:---:|:---:|:---------------:|:------------:|:--------------:|:-------------:|
+| Pyramid | 2005 | V | V |  |  | V |  | large |
+| Django | 2006 | V | V | V | V | V | V | large |
+| Flask | 2010 | V |  |  |  |  |  | small |
+
+稱為表 {@tbl:網際框架}。
+
+Table: 價目表 {#tbl:價目表}
+
+| Tables   |      Are      |  Cool |
+|----------|:-------------:|------:|
+| col 1 is |  left-aligned | $1600 |
+| col 2 is |    centered   |   $12 |
+| col 3 is | right-aligned |    $1 |
+
+稱為表 {@tbl:價目表}。
+
+關於表格生成可以參考這裡：[http://www.tablesgenerator.com/markdown_tables]
+
+[http://www.tablesgenerator.com/markdown_tables]: http://www.tablesgenerator.com/markdown_tables
+
 </t>
 <t tx="40323230.20170130111502.1">小標題2.1
 ---
@@ -57,7 +83,7 @@ filename = "report"
 
 ![Kmol][]
 
-稱為圖 @fig:駱駝 。
+稱為圖 {@fig:駱駝}。
 
 [Kmol]: ../kmol.png {#fig:駱駝}
 

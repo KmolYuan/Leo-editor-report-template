@@ -44,9 +44,9 @@ $if(CJKmainfont)$
     \usepackage{indentfirst}
     \usepackage{CJKnumb}
     \renewcommand{\figurename}{圖}
-    \renewcommand{\thefigure}{{\arabic{chapter}}.\arabic{section}}
+    \renewcommand{\thefigure}{{\arabic{chapter}}.\arabic{figure}}
     \renewcommand{\tablename}{表}
-    \renewcommand{\thetable}{{\arabic{chapter}}.\arabic{section}}
+    \renewcommand{\thetable}{{\arabic{chapter}}.\arabic{table}}
     \renewcommand{\bibname}{\center 參考書目}
     \renewcommand{\chaptername}{}
     \renewcommand{\thechapter}{第\CJKnumber{\arabic{chapter}}章}
@@ -297,7 +297,7 @@ $if(toc)$
     \tableofcontents
     \newcommand{\lotlabel}{表}
     \renewcommand{\listtablename}{\center 表目錄}
-    \renewcommand{\numberline}[1]{\loflabel~#1\hspace*{1em}}
+    \renewcommand{\numberline}[1]{\lotlabel~#1\hspace*{1em}}
     \listoftables
     \newcommand{\loflabel}{圖}
     \renewcommand{\listfigurename}{\center 圖目錄}
