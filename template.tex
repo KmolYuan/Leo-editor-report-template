@@ -57,12 +57,14 @@ $if(CJKmainfont)$
     \setmainfont{Times New Roman}
     \setromanfont{Times New Roman}
     \setmonofont{Times New Roman}
+    \usepackage{titlesec}
+    \titleformat{\chapter}[block]{\LARGE\centering}{\thechapter}{0.5em}{}
 $endif$
 \fi
 % use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 % use microtype if available
-\IfFileExists{microtype.sty}{%
+\IfFileExists{microtype.sty}{
 \usepackage{microtype}
 \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 }{}
@@ -273,9 +275,9 @@ $endif$
 \frontmatter
 $if(abstract)$
 \renewcommand{\abstractname}{\LARGE \center 摘要}
-\begin{abstract}
-$abstract$
-\end{abstract}
+\chapter*{摘要}
+\addcontentsline{toc}{chapter}{摘要}
+\fontsize{14}{21}\selectfont{$abstract$}
 $endif$
 
 $for(include-before)$
@@ -302,7 +304,7 @@ $if(toc)$
 \endgroup
 $endif$
 
-% start normal page number, 1 2 3
+% Start normal page number, 1 2 3
 \mainmatter
 $body$
 

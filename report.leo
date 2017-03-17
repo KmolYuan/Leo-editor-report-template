@@ -9,7 +9,7 @@
 <preferences/>
 <find_panel_settings/>
 <vnodes>
-<v t="ahshoe.20161120121808.1" a="E"><vh>@settings</vh>
+<v t="ahshoe.20161120121808.1"><vh>@settings</vh>
 <v t="ahshoe.20170315212615.1"><vh>@data qt-gui-plugin-style-sheet</vh></v>
 <v t="ahshoe.20170315212626.1"><vh>@string initial_split_orientation = horizontal</vh></v>
 </v>
@@ -255,7 +255,8 @@ margin = "1in"
 settingFlag = "--latex-engine=xelatex -V lang=chinese -N --toc --highlight-style kate -V documentclass=report  --filter pandoc-fignos --template=template.tex -V \"CJKmainfont:{0}\" -V fontsize={1}pt -V geometry:margin={2}".format(font, fontsize, margin)
 print("---Pandoc---")
 os.system("pandoc {0}.md -o pdf/{0}.pdf {1}".format(filename, settingFlag))
-g.es("{} PDF 轉換完畢".format(filename))</t>
+g.es("{} PDF 轉換完畢".format(filename))
+print('-'*12)</t>
 <t tx="ahshoe.20170129120932.1"></t>
 <t tx="ahshoe.20170129171825.1">大標題一
 ===
@@ -358,9 +359,10 @@ vertical: body pane on the botton</t>
 abstract: |
     這裡是摘要內容。
     
+    + 以 YAML 的方式插入。
     + 使用 Markdown 語法。
     
-    本研究...
+    本研究的重點在於 ...
 ---
 
 </t>
