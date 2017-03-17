@@ -288,7 +288,7 @@ $endfor$
 
 $if(toc)$
 \begingroup
-    \renewcommand{\contentsname}{\center 目錄}
+    \renewcommand{\contentsname}{\center 目錄 \addcontentsline{toc}{chapter}{目錄}}
     \renewcommand{\numberline}[1]{~#1\hspace*{1em}}
     $if(colorlinks)$
     \hypersetup{linkcolor=$if(toccolor)$$toccolor$$else$black$endif$}
@@ -296,11 +296,11 @@ $if(toc)$
     \setcounter{tocdepth}{$toc-depth$}
     \tableofcontents
     \newcommand{\lotlabel}{表}
-    \renewcommand{\listtablename}{\center 表目錄}
+    \renewcommand{\listtablename}{\center 表目錄 \addcontentsline{toc}{chapter}{表目錄}}
     \renewcommand{\numberline}[1]{\lotlabel~#1\hspace*{1em}}
     \listoftables
     \newcommand{\loflabel}{圖}
-    \renewcommand{\listfigurename}{\center 圖目錄}
+    \renewcommand{\listfigurename}{\center 圖目錄 \addcontentsline{toc}{chapter}{圖目錄}}
     \renewcommand{\numberline}[1]{\loflabel~#1\hspace*{1em}}
     \listoffigures
 \endgroup
