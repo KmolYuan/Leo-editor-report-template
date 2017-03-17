@@ -36,7 +36,11 @@ $endif$
 
 $if(CJKmainfont)$
     \usepackage{xeCJK}
+    % 中文自動換行
     \XeTeXlinebreaklocale "zh"
+    % 文字的彈性間距
+    \XeTeXlinebreakskip = 0pt plus 1pt
+    \newfontlanguage{Chinese}{CHN}
     % 章次20級，節次16級，小節次以下14級，本文12級字
     \def\LARGE{\fontsize{20}{30}\selectfont}%章次
     \def\Large{\fontsize{16}{24}\selectfont}%節次
@@ -48,19 +52,29 @@ $if(CJKmainfont)$
     \renewcommand{\tablename}{表}
     \renewcommand{\thetable}{{\arabic{chapter}}.\arabic{table}}
     \renewcommand{\bibname}{\center 參考書目}
+    %重製章節
     \renewcommand{\chaptername}{}
     \renewcommand{\thechapter}{第\CJKnumber{\arabic{chapter}}章}
     \renewcommand{\thesection}{{\arabic{chapter}}.\arabic{section}}
     \renewcommand{\thesubsection}{{\arabic{chapter}}.{\arabic{section}}.\arabic{subsection}}
+    %設定行距與中英文字型
     \linespread{1}\selectfont
     \setCJKmainfont{$CJKmainfont$}
     \setmainfont{Times New Roman}
     \setromanfont{Times New Roman}
     \setmonofont{Times New Roman}
+    %重製章節標籤
     \usepackage{titlesec}
     \titleformat{\chapter}[block]{\LARGE\centering}{\thechapter}{0.5em}{}
     \titleformat{\section}[block]{\Large}{\thesection}{0.5em}{}
     \titleformat{\subsection}[block]{\large}{\thesubsection}{0.5em}{}
+    % 重製目錄
+    \usepackage{titletoc}
+    \titlespacing{\chapter}{0pt}{*0}{*2}
+    \titlespacing{\section}{0pt}{*1}{*1}
+    \titlespacing{\subsection}{0pt}{*1}{*1}
+    \titlespacing{\subsubsection}{0pt}{*1}{*1}
+    \titlecontents{chapter}[0em]{}{\contentspush{\thecontentslabel}\hspace*{1em}}{}{\titlerule*[0.7pc]{.}\contentspage}
 $endif$
 \fi
 % use upquote if available, for straight quotes in verbatim environments
