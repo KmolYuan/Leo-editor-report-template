@@ -54,7 +54,7 @@ abstract: |
 
 稱為圖 @fig:駱駝 。
 
-[Kmol]: ./kmol.png {#fig:駱駝}
+[Kmol]: ../kmol.png {#fig:駱駝}
 
 小標題2.2
 ---

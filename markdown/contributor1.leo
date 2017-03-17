@@ -13,9 +13,8 @@
 <v t="ahshoe.20170315212615.1"><vh>@data qt-gui-plugin-style-sheet</vh></v>
 <v t="ahshoe.20170315212626.1"><vh>@string initial_split_orientation = horizontal</vh></v>
 </v>
-<v t="ahshoe.20170125122952.1"><vh>PDF 輸出設定</vh></v>
-<v t="40323230.20170123213451.1"><vh>@button Report pdf</vh>
-<v t="ahshoe.20170125122952.1"></v>
+<v t="40323230.20170123213451.1" a="E"><vh>@button Report pdf</vh>
+<v t="ahshoe.20170317195229.1"><vh>@edit script.py</vh></v>
 </v>
 <v t="ahshoe.20170317193215.1"><vh>按照章節順序命名檔案</vh></v>
 <v t="ahshoe.20161120122151.1" a="E"><vh>@clean paragraph1.md</vh>
@@ -37,18 +36,6 @@ filename = "report"
 <t tx="ahshoe.20161120121808.1"></t>
 <t tx="ahshoe.20161120122151.1">@others
 </t>
-<t tx="ahshoe.20170125122952.1">@language python
-import os, platform
-if platform.system().lower()=="linux": font = "ukai.ttc"
-elif platform.system().lower()=="windows": font = "DFKai-SB"
-else: font = "Arial"
-fontsize = "12"
-margin = "1in"
-settingFlag = "--latex-engine=xelatex -V lang=chinese -N --toc --highlight-style kate -V documentclass=report  --filter pandoc-fignos --template=template.tex -V \"CJKmainfont:{0}\" -V fontsize={1}pt -V geometry:margin={2}".format(font, fontsize, margin)
-print("---Pandoc---")
-os.system("pandoc master.md paragraph*.md -o ../pdf/report.pdf {}".format(settingFlag))
-g.es("PDF 轉換完畢")
-print('-'*12)</t>
 <t tx="ahshoe.20170129171825.1">協同者1的大標題一
 ===
 

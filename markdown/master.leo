@@ -13,17 +13,16 @@
 <v t="ahshoe.20170315212615.1"><vh>@data qt-gui-plugin-style-sheet</vh></v>
 <v t="ahshoe.20170315212626.1"><vh>@string initial_split_orientation = horizontal</vh></v>
 </v>
-<v t="ahshoe.20170125122952.1"><vh>PDF 輸出設定</vh></v>
 <v t="40323230.20170130135731.1"><vh>@edit template.tex</vh></v>
-<v t="40323230.20170123213451.1"><vh>@button Report pdf</vh>
-<v t="ahshoe.20170125122952.1"></v>
+<v t="40323230.20170123213451.1" a="E"><vh>@button Report pdf</vh>
+<v t="ahshoe.20170317195047.1"><vh>@edit script.py</vh></v>
 </v>
 <v t="ahshoe.20161120122151.1" a="E"><vh>@clean master.md</vh>
 <v t="ahshoe.20170317115820.1"><vh>摘要</vh></v>
 <v t="ahshoe.20170129171825.1"><vh>大標題一</vh>
 <v t="ahshoe.20170202131457.1"><vh>前言內容</vh></v>
 </v>
-<v t="40323230.20170130111322.1"><vh>大標題二</vh>
+<v t="40323230.20170130111322.1" a="E"><vh>大標題二</vh>
 <v t="40323230.20170130111502.1"><vh>小標題2.1</vh></v>
 <v t="40323230.20170130111455.1"><vh>小標題2.2</vh></v>
 </v>
@@ -60,7 +59,7 @@ filename = "report"
 
 稱為圖 @fig:駱駝 。
 
-[Kmol]: ./kmol.png {#fig:駱駝}
+[Kmol]: ../kmol.png {#fig:駱駝}
 
 </t>
 <t tx="ahshoe.20161120121808.1"></t>
@@ -79,18 +78,6 @@ date: '中華民國 106 年 6 月'
 ---
 
 @others</t>
-<t tx="ahshoe.20170125122952.1">@language python
-import os, platform
-if platform.system().lower()=="linux": font = "ukai.ttc"
-elif platform.system().lower()=="windows": font = "DFKai-SB"
-else: font = "Arial"
-fontsize = "12"
-margin = "1in"
-settingFlag = "--latex-engine=xelatex -V lang=chinese -N --toc --highlight-style kate -V documentclass=report  --filter pandoc-fignos --template=template.tex -V \"CJKmainfont:{0}\" -V fontsize={1}pt -V geometry:margin={2}".format(font, fontsize, margin)
-print("---Pandoc---")
-os.system("pandoc master.md paragraph*.md -o ../pdf/report.pdf {}".format(settingFlag))
-g.es("PDF 轉換完畢")
-print('-'*12)</t>
 <t tx="ahshoe.20170129120932.1"></t>
 <t tx="ahshoe.20170129171825.1">大標題一
 ===
