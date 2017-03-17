@@ -1,22 +1,30 @@
-% 國立虎尾科技大學 \
-    機械設計系 \
-    專題研究紀錄 \
-    \
-    專題研究題目 \
-    Test English Title
-% 設計三乙 XXX 同學;
-    設計三乙 XXX 同學;
-    設計三乙 XXX 同學;
-    設計三乙 XXX 同學
-% 中華民國 106 年 6 月
+---
+university_zh: '國立虎尾科技大學'
+institute_zh: '機械設計系'
+title_zh: '專題研究題目'
+title_en: 'Test English Title'
+author:
+- 設計三乙 XXX 同學
+- 設計三乙 XXX 同學
+- 設計三乙 XXX 同學
+- 設計三乙 XXX 同學
+advisor_zh: '嚴家銘'
+date: '中華民國 106 年 6 月'
+---
 
-<!--===-->
+---
+abstract: |
+    這裡是摘要內容。
+    
+    + 使用 Markdown 語法。
+    
+    本研究...
+---
+
 大標題一
 ===
 
 大標題一 的概要
-
-<!--===-->
 
 前言內容。
 
@@ -29,7 +37,6 @@
 關於數學式可以參考這裡：[http://www.hostmath.com/][]
 
 [http://www.hostmath.com/]: http://www.hostmath.com/
-<!--===-->
 大標題二
 ===
 

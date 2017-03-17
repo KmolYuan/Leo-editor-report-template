@@ -9,7 +9,7 @@
 <preferences/>
 <find_panel_settings/>
 <vnodes>
-<v t="ahshoe.20161120121808.1"><vh>@settings</vh>
+<v t="ahshoe.20161120121808.1" a="E"><vh>@settings</vh>
 <v t="ahshoe.20170315212615.1"><vh>@data qt-gui-plugin-style-sheet</vh></v>
 <v t="ahshoe.20170315212626.1"><vh>@string initial_split_orientation = horizontal</vh></v>
 </v>
@@ -18,7 +18,6 @@
 <v t="40323230.20170204170458.1"><vh>def</vh></v>
 </v>
 <v t="40323230.20170204174825.3"><vh>自訂的CSS內容</vh></v>
-<v t="40323230.20170203112432.1"><vh>&lt;分頁記號&gt;</vh></v>
 <v t="40323230.20170203120011.1"><vh>&lt;分節記號&gt;</vh></v>
 <v t="40323230.20170130135731.1"><vh>@edit template.tex</vh></v>
 <v t="ahshoe.20161120122004.1" a="E"><vh>Report</vh>
@@ -29,20 +28,18 @@
 <v t="40323230.20170204161057.1"></v>
 </v>
 <v t="ahshoe.20161120122151.1" a="E"><vh>@clean report.md</vh>
-<v t="40323230.20170203112432.1"></v>
+<v t="ahshoe.20170317115820.1"><vh>摘要</vh></v>
 <v t="ahshoe.20170129171825.1" a="E"><vh>大標題一</vh>
-<v t="40323230.20170203120011.1"></v>
 <v t="ahshoe.20170202131457.1"><vh>前言內容</vh></v>
 </v>
-<v t="40323230.20170203112432.1"></v>
-<v t="40323230.20170130111322.1" a="E"><vh>大標題二</vh>
+<v t="40323230.20170130111322.1"><vh>大標題二</vh>
 <v t="40323230.20170203120011.1"></v>
 <v t="40323230.20170130111502.1"><vh>小標題2.1</vh></v>
 <v t="40323230.20170203120011.1"></v>
 <v t="40323230.20170130111455.1"><vh>小標題2.2</vh></v>
 </v>
 </v>
-<v t="ahshoe.20170202112800.1" a="E"><vh>@clean reveal.js/report.html</vh>
+<v t="ahshoe.20170202112800.1"><vh>@clean reveal.js/report.html</vh>
 <v t="40323230.20170204180539.1"><vh>HTML UP</vh></v>
 <v t="40323230.20170204174825.3"></v>
 <v t="40323230.20170204160943.1"><vh>report Target node</vh></v>
@@ -83,9 +80,6 @@ filename = "report"
 
 [Kmol]: ./kmol.png {#fig:駱駝}
 
-</t>
-<t tx="40323230.20170203112432.1">@language md
-&lt;!--===--&gt;
 </t>
 <t tx="40323230.20170203120011.1">@language md
 &lt;!--===--&gt;
@@ -236,28 +230,29 @@ Reveal.initialize({
 &lt;/html&gt;</t>
 <t tx="ahshoe.20161120121808.1"></t>
 <t tx="ahshoe.20161120122004.1"></t>
-<t tx="ahshoe.20161120122151.1">% 國立虎尾科技大學 \
-    機械設計系 \
-    專題研究紀錄 \
-    \
-    專題研究題目 \
-    Test English Title
-% 設計三乙 XXX 同學;
-    設計三乙 XXX 同學;
-    設計三乙 XXX 同學;
-    設計三乙 XXX 同學
-% 中華民國 106 年 6 月
+<t tx="ahshoe.20161120122151.1">---
+university_zh: '國立虎尾科技大學'
+institute_zh: '機械設計系'
+title_zh: '專題研究題目'
+title_en: 'Test English Title'
+author:
+- 設計三乙 XXX 同學
+- 設計三乙 XXX 同學
+- 設計三乙 XXX 同學
+- 設計三乙 XXX 同學
+advisor_zh: '嚴家銘'
+date: '中華民國 106 年 6 月'
+---
 
-@others
-</t>
+@others</t>
 <t tx="ahshoe.20170125122952.1">@language python
 import os, platform
-if platform.system().lower()=="linux": font = "教育部標準楷書"
+if platform.system().lower()=="linux": font = "ukai.ttc"
 elif platform.system().lower()=="windows": font = "DFKai-SB"
 else: font = "Arial"
 fontsize = "12"
 margin = "1in"
-settingFlag = "--latex-engine=xelatex -V lang=chinese -N --toc -V lof=true -V lot=true --highlight-style kate -V documentclass=report  --filter pandoc-fignos --template=template.tex -V \"CJKmainfont:{0}\" -V fontsize={1}pt -V geometry:margin={2}".format(font, fontsize, margin)
+settingFlag = "--latex-engine=xelatex -V lang=chinese -N --toc --highlight-style kate -V documentclass=report  --filter pandoc-fignos --template=template.tex -V \"CJKmainfont:{0}\" -V fontsize={1}pt -V geometry:margin={2}".format(font, fontsize, margin)
 print("---Pandoc---")
 os.system("pandoc {0}.md -o pdf/{0}.pdf {1}".format(filename, settingFlag))
 g.es("{} PDF 轉換完畢".format(filename))</t>
@@ -359,5 +354,15 @@ QLineEdit#editorLabel {
 }</t>
 <t tx="ahshoe.20170315212626.1">horizontal: body pane to the left
 vertical: body pane on the botton</t>
+<t tx="ahshoe.20170317115820.1">---
+abstract: |
+    這裡是摘要內容。
+    
+    + 使用 Markdown 語法。
+    
+    本研究...
+---
+
+</t>
 </tnodes>
 </leo_file>

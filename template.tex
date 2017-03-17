@@ -48,7 +48,6 @@ $if(CJKmainfont)$
     \renewcommand{\tablename}{表}
     \renewcommand{\thetable}{{\arabic{chapter}}.\arabic{section}}
     \renewcommand{\bibname}{\center 參考書目}
-    \renewcommand{\abstractname}{\center 附錄}
     \renewcommand{\chaptername}{}
     \renewcommand{\thechapter}{第\CJKnumber{\arabic{chapter}}章}
     \renewcommand{\thesection}{{\arabic{chapter}}.\arabic{section}}
@@ -212,29 +211,68 @@ $for(header-includes)$
 $header-includes$
 $endfor$
 
+\begin{document}
 %Cover Start
-$if(title)$
-\title{\huge $title$$if(thanks)$\thanks{$thanks$}$endif$}
+\begin{titlepage}
+\vspace{1cm}
+\begin{center}
+$if(university_zh)$
+\fontsize{36}{54}\selectfont{
+    $university_zh$\par
+}
 $endif$
-$if(subtitle)$
-\providecommand{\subtitle}[1]{}
-\subtitle{$subtitle$}
+$if(institute_zh)$
+\fontsize{28}{42}\selectfont{$institute_zh$\par}
 $endif$
+\fontsize{24}{36}\selectfont{專題研究紀錄\par}
+\vspace{1.5cm}
+$if(title_zh)$
+\fontsize{20}{30}\selectfont{
+    $title_zh$\par
+    $title_en$\par
+}
+$endif$
+\vspace{\fill}
 $if(author)$
-\author{$for(author)$$author$$sep$ \and $endfor$}
+\fontsize{18}{27}\selectfont{
+    學生：\par
+    $for(author)$$author$$sep$ \par $endfor$ \par
+    指導教授：$advisor_zh$\par
+}
 $endif$
-$if(institute)$
-\providecommand{\institute}[1]{}
-\institute{$for(institute)$$institute$$sep$ \and $endfor$}
-$endif$
-\date{$date$}
+\vspace{1.5cm}
+\fontsize{16}{24}\selectfont{$date$\par}
+\end{center}
+\vspace{1cm}
+\end{titlepage}
+
+\newcommand\frontmatter{
+    \cleardoublepage
+    \pagenumbering{roman}
+}
+
+\newcommand\mainmatter{
+    \cleardoublepage
+    \pagenumbering{arabic}
+}
+
+\newcommand\backmatter{
+    \if@openright
+        \cleardoublepage
+    \else
+        \clearpage
+    \fi
+}
 
 %Document start
-\begin{document}
 $if(title)$
 \maketitle
 $endif$
+
+% Set page number to arabic i ii...
+\frontmatter
 $if(abstract)$
+\renewcommand{\abstractname}{\LARGE \center 摘要}
 \begin{abstract}
 $abstract$
 \end{abstract}
@@ -242,31 +280,30 @@ $endif$
 
 $for(include-before)$
 $include-before$
-
 $endfor$
+
 $if(toc)$
-{
-\renewcommand{\contentsname}{\center 目錄}
-\renewcommand{\numberline}[1]{~#1\hspace*{1em}}
-$if(colorlinks)$
-\hypersetup{linkcolor=$if(toccolor)$$toccolor$$else$black$endif$}
+\begingroup
+    \renewcommand{\contentsname}{\center 目錄}
+    \renewcommand{\numberline}[1]{~#1\hspace*{1em}}
+    $if(colorlinks)$
+    \hypersetup{linkcolor=$if(toccolor)$$toccolor$$else$black$endif$}
+    $endif$
+    \setcounter{tocdepth}{$toc-depth$}
+    \tableofcontents
+    \newcommand{\lotlabel}{表}
+    \renewcommand{\listtablename}{\center 表目錄}
+    \renewcommand{\numberline}[1]{\loflabel~#1\hspace*{1em}}
+    \listoftables
+    \newcommand{\loflabel}{圖}
+    \renewcommand{\listfigurename}{\center 圖目錄}
+    \renewcommand{\numberline}[1]{\loflabel~#1\hspace*{1em}}
+    \listoffigures
+\endgroup
 $endif$
-\setcounter{tocdepth}{$toc-depth$}
-\tableofcontents
-}
-$endif$
-$if(lot)$
-\newcommand{\lotlabel}{表}
-\renewcommand{\listtablename}{\center 表目錄}
-\renewcommand{\numberline}[1]{\loflabel~#1\hspace*{1em}}
-\listoftables
-$endif$
-$if(lof)$
-\newcommand{\loflabel}{圖}
-\renewcommand{\listfigurename}{\center 圖目錄}
-\renewcommand{\numberline}[1]{\loflabel~#1\hspace*{1em}}
-\listoffigures
-$endif$
+
+% start normal page number, 1 2 3
+\mainmatter
 $body$
 
 $if(natbib)$
