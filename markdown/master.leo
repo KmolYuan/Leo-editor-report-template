@@ -17,7 +17,7 @@
 <v t="40323230.20170123213451.1" a="E"><vh>@button Report pdf</vh>
 <v t="ahshoe.20170317195047.1"><vh>@edit script.py</vh></v>
 </v>
-<v t="ahshoe.20161120122151.1" a="E"><vh>@clean master.md</vh>
+<v t="ahshoe.20161120122151.1"><vh>@clean master.md</vh>
 <v t="ahshoe.20170317115820.1"><vh>摘要</vh></v>
 <v t="ahshoe.20170129171825.1" a="E"><vh>大標題一</vh>
 <v t="ahshoe.20170202131457.1"><vh>前言內容</vh></v>
@@ -27,6 +27,9 @@
 <v t="40323230.20170130111455.1"><vh>小標題2.2</vh></v>
 </v>
 </v>
+<v t="ahshoe.20170322182713.1"><vh>@edit reference.md</vh></v>
+<v t="ahshoe.20170322182244.1"><vh>@edit appendix.md</vh></v>
+<v t="ahshoe.20170322181453.1"><vh>@edit refer.bib</vh></v>
 <v t="ahshoe.20170129120932.1" a="E"><vh>Readme</vh>
 <v t="ahshoe.20170129120858.1"><vh>@edit ../README.md</vh></v>
 </v>
@@ -123,6 +126,9 @@ date: '中華民國 106 年 6 月'
 關於數學式可以參考這裡：[http://www.hostmath.com/][]
 
 [http://www.hostmath.com/]: http://www.hostmath.com/
+
+提及了某篇刊物[@myart]在這裡。
+
 </t>
 <t tx="ahshoe.20170315212615.1">QTreeWidget {
     /* These apply to the selected item, but not to editing items.*/

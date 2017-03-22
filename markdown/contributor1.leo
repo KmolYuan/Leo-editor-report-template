@@ -17,10 +17,13 @@
 <v t="ahshoe.20170317195229.1"><vh>@edit script.py</vh></v>
 </v>
 <v t="ahshoe.20170317193215.1"><vh>按照章節順序命名檔案</vh></v>
-<v t="ahshoe.20161120122151.1" a="E"><vh>@clean paragraph1.md</vh>
+<v t="ahshoe.20161120122151.1"><vh>@clean paragraph1.md</vh>
 <v t="ahshoe.20170129171825.1" a="E"><vh>大標題</vh>
 <v t="40323230.20170130111502.1"><vh>小標題</vh></v>
 </v>
+</v>
+<v t="ahshoe.20170322181717.1" a="E"><vh>新增參考文獻</vh>
+<v t="ahshoe.20170322181645.1"><vh>@edit refer.bib</vh></v>
 </v>
 </vnodes>
 <tnodes>
@@ -120,5 +123,22 @@ QLineEdit#editorLabel {
 vertical: body pane on the botton</t>
 <t tx="ahshoe.20170317193215.1">Pandoc 會依照數字順序編排章節，
 協同者請按照章節出現順序命名檔案。</t>
+<t tx="ahshoe.20170322181717.1">把會用到的資料加進來，
+第一行的 myart 為參考代碼，不重複即可。
+
+使用方式：[@myart]
+
+@article{myart,
+  author  = {作者名字}, 
+  title   = {標題},
+  journal = {刊物名稱},
+  year    = 1993,
+  number  = 2,
+  pages   = {201-213},
+  month   = 7,
+  note    = {選擇性註解}, 
+  volume  = 4
+}
+</t>
 </tnodes>
 </leo_file>

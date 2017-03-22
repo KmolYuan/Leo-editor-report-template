@@ -339,10 +339,12 @@ $endif$
 $endif$
 $if(biblatex)$
 \printbibliography$if(biblio-title)$[title=$biblio-title$]$endif$
-
 $endif$
+
+$if(include-after)$
+\newpage
 $for(include-after)$
 $include-after$
-
 $endfor$
+$endif$
 \end{document}
