@@ -28,7 +28,6 @@
 </v>
 </v>
 <v t="ahshoe.20170322182713.1"><vh>@edit reference.md</vh></v>
-<v t="ahshoe.20170322182244.1"><vh>@edit appendix.md</vh></v>
 <v t="ahshoe.20170322181453.1"><vh>@edit refer.bib</vh></v>
 <v t="ahshoe.20170129120932.1" a="E"><vh>Readme</vh>
 <v t="ahshoe.20170129120858.1"><vh>@edit ../README.md</vh></v>
